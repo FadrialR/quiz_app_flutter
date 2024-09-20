@@ -27,22 +27,31 @@ class IntroPage extends StatelessWidget {
             const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {},
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-                child: Text(
-                  'Start Quiz',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey[900],
                 side: BorderSide(color: Colors.white),
               ),
-            )
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 5),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      'Start Quiz',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
