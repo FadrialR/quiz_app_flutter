@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/pages/questions_screen.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage(this.startQuiz, {super.key});
