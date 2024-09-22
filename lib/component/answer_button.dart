@@ -12,13 +12,16 @@ class AnswerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 320,
-      height: 50,
-      child: OutlinedButton(
-        onPressed: onTap,
-        style: OutlinedButton.styleFrom(),
-        child: Text(answerText),
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Container(
+        width: 320,
+        height: 50,
+        child: OutlinedButton(
+          onPressed: onTap,
+          style: OutlinedButton.styleFrom(),
+          child: Text(answerText),
+        ),
       ),
     );
   }

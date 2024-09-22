@@ -12,7 +12,7 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    final currentQuiestion = questions[2];
+    final currentQuestion = questions[1];
 
     return Scaffold(
       body: Container(
@@ -42,7 +42,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          currentQuiestion.text,
+                          currentQuestion.text,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontSize: 20,
@@ -52,25 +52,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                         const SizedBox(height: 30),
 
                         // Answers
-                        AnswerButton(
-                          answerText: currentQuiestion.answers[0],
-                          onTap: () {},
-                        ),
-                        const SizedBox(height: 20),
-                        AnswerButton(
-                          answerText: currentQuiestion.answers[1],
-                          onTap: () {},
-                        ),
-                        const SizedBox(height: 20),
-                        AnswerButton(
-                          answerText: currentQuiestion.answers[2],
-                          onTap: () {},
-                        ),
-                        const SizedBox(height: 20),
-                        AnswerButton(
-                          answerText: currentQuiestion.answers[3],
-                          onTap: () {},
-                        ),
+                        ...currentQuestion.getShuffledAnswers().map((answer) {
+                          return AnswerButton(
+                            answerText: answer,
+                            onTap: () {},
+                          );
+                        }),
                       ],
                     ),
                   ),
