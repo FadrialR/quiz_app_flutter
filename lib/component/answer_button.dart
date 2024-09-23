@@ -19,7 +19,6 @@ class AnswerButton extends StatelessWidget {
         height: 50,
         child: OutlinedButton(
           onPressed: onTap,
-          style: OutlinedButton.styleFrom(),
           child: Text(
             answerText,
             textAlign: TextAlign.center,
